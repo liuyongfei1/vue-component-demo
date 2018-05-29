@@ -16,7 +16,7 @@
               label="年龄">
             </el-table-column>
           </el-table>
-          <child-component @setName="setName" @setAge="setAge" :tableData="tableData"></child-component>
+          <child-component @updateData="updateData" :tableData="tableData"></child-component>
         </div>
       </el-col>
       <el-col :span="4"></el-col>
@@ -42,12 +42,17 @@ export default {
     }
   },
   methods: {
-    setName (name) {
-      this.tableData[0].name = name
-    },
-
-    setAge (age) {
-      this.tableData[0].age = age
+    /**
+     * 更新父组件的数据
+     * @param obj
+     */
+    updateData (obj) {
+      if (obj.type === 1) {
+        this.tableData[0].name = obj.data
+      }
+      if (obj.type === 2) {
+        this.tableData[0].age = obj.data
+      }
     }
   }
 }
