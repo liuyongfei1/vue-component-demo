@@ -3,7 +3,7 @@
     <el-row :gutter="20">
       <el-col :span="8" :offset="8">
         <h3>父组件</h3>
-        <div style="border: 1px #2c3e50 solid; padding: 10px;">
+        <div class="border">
           <el-table
             :data="tableData"
             border>
@@ -76,5 +76,9 @@ export default {
 
   a {
     color: #42b983;
+  }
+  .border {
+    border: 1px #2c3e50 solid;
+    padding: 10px;
   }
 </style>

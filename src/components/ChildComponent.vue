@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div style="border: 1px #3e82f7 solid; padding: 10px;margin-top: 10px;">
-      <h3 style="color: #3e82f7">子组件</h3>
+    <div class="border">
+      <h4 style="color: #3e82f7">子组件</h4>
       <el-table
         :data="tableData"
         border>
@@ -47,5 +47,10 @@ export default {
 <style lang="scss">
   .el-table th {
     text-align: center;
+  }
+  .border {
+    border: 1px #3e82f7 solid;
+    padding: 10px;
+    margin-top: 10px;
   }
 </style>
