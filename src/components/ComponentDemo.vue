@@ -16,7 +16,7 @@
               label="年龄">
             </el-table-column>
           </el-table>
-          <child-component @updateData="updateData" :tableData="tableData"></child-component>
+          <child-component v-on:update-data="updateData" :tableData="tableData"></child-component>
         </div>
       </el-col>
       <el-col :span="4"></el-col>
@@ -46,13 +46,8 @@ export default {
      * 更新父组件的数据
      * @param obj
      */
-    updateData (obj) {
-      if (obj.type === 1) {
-        this.tableData[0].name = obj.data
-      }
-      if (obj.type === 2) {
-        this.tableData[0].age = obj.data
-      }
+    updateData (data) {
+      this.tableData[0].name = data
     }
   }
 }
